@@ -1,5 +1,6 @@
 package com.cursojava.spring.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,8 +24,8 @@ public class Category implements Serializable {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "category")
-    @Transient
+    @JsonIgnore
+    @ManyToMany(mappedBy = "categories")
     private Set<Product> products = new HashSet<>();
 
     public Category(Long id, String name) {
