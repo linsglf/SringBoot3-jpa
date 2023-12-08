@@ -2,6 +2,7 @@ package com.cursojava.spring.entities.pk;
 
 import com.cursojava.spring.entities.Order;
 import com.cursojava.spring.entities.Product;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -12,8 +13,6 @@ import lombok.Setter;
 import java.io.Serializable;
 
 @Embeddable
-@Getter
-@Setter
 @EqualsAndHashCode
 public class OrderItemPK implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -25,4 +24,21 @@ public class OrderItemPK implements Serializable {
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
+
+    @JsonIgnore
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 }
