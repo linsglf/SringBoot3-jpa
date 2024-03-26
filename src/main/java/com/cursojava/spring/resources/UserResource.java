@@ -19,8 +19,7 @@ public class UserResource {
 
     @GetMapping("/hello-world")
     public String helloWorld() {
-        return "Hello, World! Congrats your application is deployed in Azure!" +
-                "Oi, Mundo! Parabéns sua aplicação está no Azure!" +
+        return  "Oi, Mundo! Parabéns sua aplicação está no Azure!" +
                 "Oi Galega, Eu te amo!";
     }
 
