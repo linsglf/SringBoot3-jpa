@@ -17,6 +17,11 @@ public class UserResource {
     @Autowired
     private UserService service;
 
+    @GetMapping("/hello-world")
+    public String helloWorld() {
+        return "Hello, World! Congrats your application is deployed in Azure!";
+    }
+
     @GetMapping
     public ResponseEntity<List<User>> findAll() {
         List<User> list = service.findAll();
