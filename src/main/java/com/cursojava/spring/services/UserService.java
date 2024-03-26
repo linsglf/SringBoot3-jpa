@@ -5,7 +5,6 @@ import com.cursojava.spring.repositories.UserRepository;
 import com.cursojava.spring.services.exceptions.DatabaseException;
 import com.cursojava.spring.services.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
-import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
